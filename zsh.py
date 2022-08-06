@@ -6,6 +6,9 @@ def run(cmd : str):
     print( sb.getoutput(cmd))
 
 
+if os.path.exists(os.path.join(os.environ["HOME"], '.oh-my-zsh')):
+    run('rm -rf ~/.oh-my-zsh/')
+
 run('git clone --depth=1 https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh')
 run('git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/')
 run('git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/')
